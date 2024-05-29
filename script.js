@@ -4,7 +4,7 @@ function testDIY(value) {
   return {
     toBe: exp => {
       if (value === exp) {
-        console.log('Success')
+        console.log(`Success. Value is ${value}`)
       } else {
         console.error(`Value is ${value}, but expected ${exp}`)
       }
@@ -13,7 +13,10 @@ function testDIY(value) {
 }
 
 const sum = (a, b) => a + b;
+const pow = (a, b) => a * b;
 
 const nativeNull = () => null;
 
-testDIY(sum(41, 1)).toBe(42)
+testDIY(sum(41, 1)).toBe(42);
+testDIY(pow(2, 5)).toBe(32);
+testDIY(pow(2, 2)).toBe(4);
